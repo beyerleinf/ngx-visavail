@@ -20,8 +20,12 @@
             "tsConfig": "tsconfig.app.json",
             "aot": false,
             "assets": ["src/favicon.ico", "src/assets"],
-            "styles": ["src/styles.css"],
-            "scripts": []
+            "styles": ["src/styles.css", "src/assets/visavail/visavail.css"],
+            "scripts": [
+              "node_modules/d3/dist/d3.min.js",
+              "node_modules/moment/moment.js",
+              "src/assets/visavail/visavail.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -87,11 +91,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "tsconfig.app.json",
-              "tsconfig.spec.json",
-              "e2e/tsconfig.json"
-            ],
+            "tsConfig": ["tsconfig.app.json", "tsconfig.spec.json", "e2e/tsconfig.json"],
             "exclude": ["**/node_modules/**"]
           }
         },
@@ -133,10 +133,7 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "projects/ngx-visavail/tsconfig.lib.json",
-              "projects/ngx-visavail/tsconfig.spec.json"
-            ],
+            "tsConfig": ["projects/ngx-visavail/tsconfig.lib.json", "projects/ngx-visavail/tsconfig.spec.json"],
             "exclude": ["**/node_modules/**"]
           }
         }
